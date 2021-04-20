@@ -42,6 +42,10 @@ public class PlayerMvmt : MonoBehaviour
         {
             isGrounded = true;
         }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            instruction.text = "You are Touched by Little Red!";
+        }
 
     }
     private void OnCollisionExit(Collision collision)
@@ -50,10 +54,7 @@ public class PlayerMvmt : MonoBehaviour
         {
             isGrounded = false;
         }
-        if (collision.gameObject.tag == "Candy")
-        {
-            instruction.text = "";
-        }
+        instruction.text = "";
 
     }
     private void OnCollisionStay(Collision collision)
